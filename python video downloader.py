@@ -33,7 +33,7 @@ def download():
     Label(root, text= "The Video has been Dowloaded!", bg='#FF0000', fg = "white", font=Downloaded_font).place(x= 220, y =450 )
     link.delete(0,END)
 
- 
+ # This Function asks the user to enter the location where they wish the video to be downloaded using the Tkinter GUI
 def path_selection():
     folder_selected= filedialog.askdirectory()
     path_entry.delete(0, END)
