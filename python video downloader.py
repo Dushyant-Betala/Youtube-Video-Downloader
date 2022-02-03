@@ -4,6 +4,7 @@ import tkinter.font as tkFont
 
 from pytube import YouTube
 
+#this creates the GUI for the Downloader using Tkinter Library
 root = Tk()
 root.geometry("960x540")
 root.resizable(width=False, height= False)
@@ -24,6 +25,7 @@ lk = StringVar()
 link = Entry(root, width =130 , bg ="white", textvariable= lk)
 link.place(x=90, y=90)
 
+#This Function gets the URL and storage location from the GUI and downlaods the video from the URL into the location file
 def download():
     url=YouTube(lk.get()) 
     vid = url.streams.get_highest_resolution()
@@ -31,8 +33,7 @@ def download():
     Label(root, text= "The Video has been Dowloaded!", bg='#FF0000', fg = "white", font=Downloaded_font).place(x= 220, y =450 )
     link.delete(0,END)
 
-
-
+ 
 def path_selection():
     folder_selected= filedialog.askdirectory()
     path_entry.delete(0, END)
